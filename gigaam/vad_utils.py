@@ -82,7 +82,7 @@ def segment_audio(
         end = min(len(audio) / 1000, segment.end)
         if (
             curr_duration > min_duration and start - curr_end > new_chunk_threshold
-        ) or (curr_duration + (end - curr_end) > max_duration):
+        ) or (curr_duration + (end - curr_end) > max_duration) and curr_duration > 0:
 
             start_ms = int(curr_start * 1000)
             end_ms = int(curr_end * 1000)
